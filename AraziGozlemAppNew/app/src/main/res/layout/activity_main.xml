@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Kayıt Listesi Açıklama -->
+    <!-- Sol alttaki butonun açıklaması -->
+    <TextView
+        android:id="@+id/tvListObservationsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gözlem Listesi"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:background="@drawable/label_background"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabListObservations"
+        app:layout_constraintStart_toStartOf="@+id/fabListObservations"
+        android:layout_marginBottom="4dp"
+        android:elevation="2dp"/>
+
+
+    <!-- Kayıt Listesi Butonu -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabListObservations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Gözlem Geçmişi"
+        app:srcCompat="@drawable/ic_history"
+        app:tint="@android:color/white"
+        android:backgroundTint="@color/black" />
+
+
+    <!-- Gözlem Ekle Açıklama -->
+    <TextView
+        android:id="@+id/tvAddObservationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gözlem Ekle"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/fabAddObservation"
+        app:layout_constraintEnd_toEndOf="@+id/fabAddObservation"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Gözlem Ekle Butonu -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddObservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Yeni gözlem ekle"
+        app:backgroundTint="#386A15"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <!-- Konuma Git Açıklama -->
+    <TextView
+        android:id="@+id/tvCurrentLocationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konuma Git"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/fabCurrentLocation"
+        app:layout_constraintEnd_toEndOf="@+id/fabCurrentLocation"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Konuma Git Butonu -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCurrentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabAddObservation"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Mevcut konuma git"
+        app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
